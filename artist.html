@@ -16,11 +16,51 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="styles.css">
+        <style>
+            body {font-family: "Lato", sans-serif}
+            .mySlides {display: none}
 
-        <!-- Created a proper file for the teplate's JavaScript -->
-        <script src="scripts.js"></script>
+            .w3-circle {
+            border-radius: 50%;
+            }
+
+        </style>
+
+        <script>
+          // Automatic Slideshow - change image every 4 seconds
+          var myIndex = 0;
+          carousel();
+
+          function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 4000);    
+          }
+
+          // Used to toggle the menu on small screens when clicking on the menu button
+          function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+              x.className += " w3-show";
+            } else { 
+              x.className = x.className.replace(" w3-show", "");
+            }
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          var modal = document.getElementById('ticketModal');
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        </script>
 
     </head>
 
@@ -31,14 +71,14 @@
         <div class="w3-bar w3-black w3-card">
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
           <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-          <a href="artist.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ARTIST</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ARTIST</a>
           <a href="https://open.spotify.com/intl-fr/artist/0EYsCeBgFfoiWQ8u8O7a3S?si=kISBgA_8SnqLS1lIl8ogfw" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SPOTIFY</a>
-          <a href="discography.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DISCOGRAPHY</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DISCOGRAPHY</a>
           <div class="w3-dropdown-hover w3-hide-small">
             <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
             <div class="w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="influences.html" class="w3-bar-item w3-button">iMCleAr_'s influences</a>
-              <a href="albums.html" class="w3-bar-item w3-button">iMCleAr_'s Albums Ratings</a>
+              <a href="#" class="w3-bar-item w3-button">iMCleAr_'s influences</a>
+              <a href="#" class="w3-bar-item w3-button">iMCleAr_'s Albums Ratings</a>
             </div>
           </div>
         </div>
@@ -46,9 +86,9 @@
 
       <!-- NAVBAR ON SMALL SCREENS -->
       <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-        <a href="artist.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ARTIST</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ARTIST</a>
         <a href="https://open.spotify.com/intl-fr/artist/0EYsCeBgFfoiWQ8u8O7a3S?si=kISBgA_8SnqLS1lIl8ogfw" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SPOTIFY</a>
-        <a href="discography.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DISCOGRAPHY</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DISCOGRAPHY</a>
       </div>
 
       <!-- PAGE CONTENT -->
