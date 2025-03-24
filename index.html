@@ -19,6 +19,11 @@
         <style>
             body {font-family: "Lato", sans-serif}
             .mySlides {display: none}
+
+            .w3-circle {
+            border-radius: 50%;
+            }
+
         </style>
 
         <script>
@@ -65,10 +70,10 @@
       <div class="w3-top">
         <div class="w3-bar w3-black w3-card">
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-          <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-          <a href="#artist" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ARTIST</a>
-          <a href="#spotify" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SPOTIFY</a>
-          <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+          <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ARTIST</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SPOTIFY</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DISCOGRAPHY</a>
           <div class="w3-dropdown-hover w3-hide-small">
             <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
             <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -81,9 +86,9 @@
 
       <!-- NAVBAR ON SMALL SCREENS -->
       <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-        <a href="#artist" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ARTIST</a>
-        <a href="#spotify" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SPOTIFY</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ARTIST</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SPOTIFY</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DISCOGRAPHY</a>
       </div>
 
       <!-- PAGE CONTENT -->
@@ -118,36 +123,40 @@
       
         <!-- IMCLEAR SECTION -->
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+          <img src="images/imclear_ logo.png" class="w3-circle" style="width:50%; height:50%;">
           <h2 class="w3-wide">iMCleAr_</h2>
           <p class="w3-opacity"><i>Music explorer</i></p>
-          <p class="w3-justify w3-twothird w3-padding-32">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="w3-justify w3-twothird w3-padding-32">iMCleAr_ is the name of a French musician who started his musical adventure in June 2024. 
+            Well in fact, his passion for music existed years before he stared composing/producing music.
+            He remembers listening to his parent's CD's in the car, not understanding a word of the lyrics, but still enjoying the experience.   
+            Music have always been the most important thing in his life, and being able to create songs was a huge achievement, 
+            something he always dreamed of! Since the moment he got his hand on his beloved Minilab 3, the keyboard that started it all, 
+            iMCleAr_ never stopped creating, exploring hundreds of differents musical genres, as a tribute to the diversity of music.
+            iMCleAr_ has only gotten better, both in terms of equipment and experience, which allows him to produce something new with each composition released, 
+            and which makes him a special artist, without a predefined genre, but with a very particular musical touch.</br>
+            So if you wanna discover his universe, go stream his songs on <a href="https://open.spotify.com/intl-fr/artist/0EYsCeBgFfoiWQ8u8O7a3S?si=kISBgA_8SnqLS1lIl8ogfw" class="w3-text-green">Spotify</a>!</p>
           <div class="w3-row w3-third w3-padding-32">
             <div class="">
-              <p>Name</p>
-              <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+              <img src="images/5ynth3515.jpg" class="w3-round w3-margin-bottom w3-padding-16" alt="Random Name" style="width:30%">
+            </div>
+            <div class="">           
+              <img src="images/h3xalogy.jpg" class="w3-round w3-margin-bottom w3-padding-16" alt="Random Name" style="width:30%">
             </div>
             <div class="">
-              <p>Name</p>
-              <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
-            </div>
-            <div class="">
-              <p>Name</p>
-              <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
+              <img src="images/ODYSSEY.jpg" class="w3-round w3-margin-bottom  w3-padding-16" alt="Random Name" style="width:30%">
             </div>
           </div>
         </div>
       
         <!-- CONTACT SECTION -->
         <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="contact">
-          <h2 class="w3-wide w3-center">GET IN TOUCH</h2>
+          <h2 class="w3-wide w3-center">CONTACT ME</h2>
           <p class="w3-opacity w3-center"><i>Advices? Reviews? Collabs? Let me know!</i></p>
           <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
               <i class="fa fa-map-marker" style="width:30px"></i> Vallauris, FR<br>
               <i class="fa fa-envelope" style="width:30px"> </i> Email: cmichelzik@gmail.com<br>
-              <i class="fa fa-envelope" style="width:30px"> </i> Email: cmichelmgmt@gmail.com<br>
+              <i class="fa fa-envelope" style="width:30px"> </i> Email 2: cmichelmgmt@gmail.com<br>
             </div>
           </div>
         </div>
