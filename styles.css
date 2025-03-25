@@ -4,3 +4,12 @@ body {font-family: "Lato", sans-serif}
 .w3-circle {
 border-radius: 50%;
 }
+
+.hovericons {
+    transition: 0.2s;
+}
+
+.hovericons:hover {
+    transform: scale(0.85);
+    transition: 0.2s;
+}
