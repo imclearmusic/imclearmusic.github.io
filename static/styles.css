@@ -22,3 +22,30 @@ border-radius: 50%;
     transform: scale(1.15);
     transition: 0.2s;
 }
+
+.shine {
+    font-size: 4em;
+    font-weight: 90;
+    color: rgba(255, 255, 255, 0.144);
+    background: #222;
+    background-image: linear-gradient(
+      -40deg,
+      transparent 0%,
+      transparent 40%,
+      #fff 50%,
+      transparent 60%,
+      transparent 100%
+    );
+    background-clip: text;
+    background-size: 400px;
+    animation: shine 4s infinite linear;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: -200px;
+    }
+    100% {
+      background-position: 200px;
+    }
+  }
