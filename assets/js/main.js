@@ -10,16 +10,52 @@
   const nav = document.getElementById('nav');
   if (nav) {
     const toggle = nav.querySelector('.nav__toggle');
+    let openingFrame = 0;
     const setOpen = (open) => {
       nav.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       root.classList.toggle('html-lock', open);
     };
-    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    const cancelPendingOpen = () => {
+      if (openingFrame) cancelAnimationFrame(openingFrame);
+      openingFrame = 0;
+    };
+    const openAtTop = () => {
+      if (scrollY <= 0) {
+        openingFrame = 0;
+        setOpen(true);
+        return;
+      }
+      openingFrame = requestAnimationFrame(openAtTop);
+    };
+    toggle.addEventListener('click', () => {
+      if (toggle.getAttribute('aria-expanded') === 'true') {
+        cancelPendingOpen();
+        setOpen(false);
+      } else if (openingFrame) {
+        cancelPendingOpen();
+      } else if (scrollY <= 0) {
+        setOpen(true);
+      } else {
+        scrollTo({ top: 0, behavior: 'smooth' });
+        openingFrame = requestAnimationFrame(openAtTop);
+      }
+    });
     nav.querySelectorAll('.nav__links a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
-    nav.querySelector('.nav__mark').addEventListener('click', () => setOpen(false));
-    addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
-    matchMedia('(min-width: 861px)').addEventListener('change', () => setOpen(false));
+    nav.querySelector('.nav__mark').addEventListener('click', () => {
+      cancelPendingOpen();
+      setOpen(false);
+    });
+    addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        cancelPendingOpen();
+        setOpen(false);
+      }
+    });
+    matchMedia('(min-width: 861px)').addEventListener('change', () => {
+      cancelPendingOpen();
+      setOpen(false);
+    });
 
     const solid = () => nav.classList.toggle('is-solid', scrollY > 24);
     addEventListener('scroll', solid, { passive: true });
